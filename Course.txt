@@ -1,0 +1,229 @@
+
+Git notes and commands easy to remember.
+By Duvan Camilo Puerto
+GitHub : DuvanP
+Ottawa 2023
+
+
+
+
+How to create a user name and email:
+
+USER:
+
+This is to tell the system who is gonna commit the files.
+
+git config --global user.name "Usuario name"
+
+--global --> is to make this user to all repositories.
+
+EMAIL:
+
+Git config --global user.email "email@email.com"
+
+Do not use you personal email, because the email is public and all developers can see it.
+
+To confirm the user and email use the next:
+
+git config user.email
+git config user.name.
+
+
+To change the branch name in the repository: 
+
+git config --global init.defaultBranch main
+
+
+How to create a new repository:
+
+REPOSITORY: it will be a local one. 
+
+	1. Create the folder:
+mkdir curso-git
+
+	2. Initialize a repository in the folder created
+git init
+
+
+Delete a repository: You need to delete the folder .git that is hidden.
+
+
+--------------------------------
+
+The three areas of Git
+
+
+	1. Working directory
+Where we have all the files.
+	--> File is modified
+
+	2. Staging Area
+Where the files are prepared to be committed 
+	(before commit) 
+--> File is staged
+
+	3. Repository Area
+Repository that contains all the metadata and changes. 
+--> File is committed
+
+----------------------------------
+
+Example:
+
+
+   1. --> git status
+
+Check if there is something to commit. Check if there is something in the staging area.
+
+	2. --> Create a new file in the directory
+for instance: hello.txt
+
+
+	3. --> git add hello.txt
+to add the file to the staging area
+
+	4. --> git rm --cached hello.txt
+This is to remove the file from the staging area in case that you don't want to commit the file>
+	
+	
+
+--------------------------------------
+
+Commit:
+
+git commit -m "text explaining what you did"
+Easy way to commit but not the recommended.
+
+git log
+This is to check the commit history
+
+git log --oneline
+This is to get a log info about the commits but in a better way
+
+git log -p
+This is to see the changes in more detail
+Use the letter q to exit
+
+git add .
+This add all files into the staging area
+
+git commit
+This will help you to commit files but using the text editor to make comments instead of the console line.
+
+git config --global core.editor "code --wait"
+This is an example to chose the text editor to be VisualStudio
+
+
+git commit -amend
+This edit the previous commit in case 
+This is to change the comments and should be done asap you notice the error
+
+ 
+git reset --soft HEAD~1
+To remove a commit in case I want to change the previous commit. It will reset the commit in a "soft way". --soft is when you want to keep the changes of the commit and --hard if you don't want to.
+
+----------------------------------------------
+
+Checksum
+
+This is the identifier number that refers to the commit:
+
+
+
+git checkout xxxxxxx
+
+where xxxxxx is that checksum code. This will show the changes that you did until that checksum. For instance if we use the code for the 4th commit, this will reproduce all the changes made until the 4th commit.
+
+
+
+----------------------------------------------
+BRANCH
+"if you switch branches without committing, you will lose that work when you swich branches."
+
+
+
+git branch version-javascript
+This creates a new branch 
+
+git branch 
+This is to see the current branch on the project and the others too.
+The current one will be in color green
+
+git checkout version-javascript
+This is to switch from the main branch to the version-javascript branch
+
+git checkout -b version-python
+This is to create a new branch and go into that one in just one line of code.
+
+git branch -m version-js
+This is to change the name of the current branch
+
+
+git branch -m version-python version-py
+This is to change the name of a branch if you're not in the one that you wanna change
+
+git branch -d version-py
+This is to delete a branch
+You should be on the branch that you are gonna delete
+This apply to branch that are located on local and not in the ones that are on GitHub. 
+
+git merge texto-expandido
+This is to merge or join branches in one. (the current one with texto-expandido)
+To merge the branches you have to be located in the branch that will receive the "fusion"
+
+git merge --continue 
+This is to continue the commit when you tried to merge two branch but there is a conflict that should be fixed. When you fixed the conflict use this command
+
+
+-------------------------------------------------------------
+
+Clone a repository on GitHub
+The Origin or repository on local store, it's the name of repository that will be cloned.
+
+git clone "URL"
+This command will clone the repository on GitHub into a local one in my computer
+
+git remote 
+This shows the name of the remote repository(GitHub)
+This command is used in Git to display information about remote repositories linked to a local repository. 
+
+git remote -v
+This command shows the URLs of remote repositories and the associated references (branches).
+
+Fetch: find the changes made on the local repository
+Push: send the changes made to GitHub
+ 
+git push origin main
+Update the changes that were made on local repository to the GitHub one.
+Origin is the name of the repository on GitHub
+Main is the branch that will be pushed
+
+If the account is not connected to the github follow the next:
+
+Github >> picture of me >> settings of the account >> personal access tokens >> Tokens (classic) >> fill the form. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
